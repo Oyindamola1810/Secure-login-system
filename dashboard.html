@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Dashboard - Secure Access System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🔐 User Dashboard</h1>
+
+        <h2>Welcome, {{ user.username }}!</h2>
+
+        <p>You have successfully logged in.</p>
+
+        <hr>
+
+        <h3>Account Information</h3>
+
+        <p><strong>Username:</strong> {{ user.username }}</p>
+
+        <p><strong>Email:</strong> {{ user.email }}</p>
+
+        <p><strong>Account Created:</strong> {{ user.created_at }}</p>
+
+        <hr>
+
+        <h3>Security Status</h3>
+
+        <p>✔ Password Protection: Active</p>
+
+        <p>✔ Login Authentication: Active</p>
+
+        <p>✔ Account Lockout: Enabled</p>
+
+        <br>
+
+        <a href="{{ url_for('logout') }}">
+            <button>Logout</button>
+        </a>
+
+    </div>
+
+</body>
+</html>
